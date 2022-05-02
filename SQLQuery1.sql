@@ -29,3 +29,8 @@ select MIN(Salary) as Minimum_Salary from employee_payroll_DB;
 select MAX(Salary) as Maximum_Salary from employee_payroll_DB;
 select COUNT(Salary) as NUmber_of_Employee from employee_payroll_DB;
 select MAX(Salary),Gender from employee_payroll_DB GROUP BY gender;
+---------------UC-8-----------------------
+select * from employee_payroll_DB;
+ALTER TABLE employee_payroll_DB Add Phone bigint;
+ALTER TABLE employee_payroll_DB Add Department varchar(200) not null default 'Information Technology';
+ALTER TABLE employee_payroll_DB Add Address varchar(200) default 'Odisha';
