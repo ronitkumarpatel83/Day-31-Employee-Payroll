@@ -21,3 +21,11 @@ select * from employee_payroll_DB;
 ALTER TABLE employee_payroll_DB add Gender char(1);
 UPDATE employee_payroll_DB set Gender = 'F' where Id = 2;
 UPDATE employee_payroll_DB set Gender ='M' where Id = 1 or Id = 3 or Id = 4;
+----------------UC-7--------------
+select * from employee_payroll_DB;
+select SUM(Salary) as Total_Salary from employee_payroll_DB;
+select AVG(Salary) as Average_Salary from employee_payroll_DB;
+select MIN(Salary) as Minimum_Salary from employee_payroll_DB;
+select MAX(Salary) as Maximum_Salary from employee_payroll_DB;
+select COUNT(Salary) as NUmber_of_Employee from employee_payroll_DB;
+select MAX(Salary),Gender from employee_payroll_DB GROUP BY gender;
