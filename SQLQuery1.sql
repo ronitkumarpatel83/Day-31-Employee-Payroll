@@ -16,3 +16,8 @@ select * from employee_payroll_DB;
 -----------UC-5---------------
 select * from employee_payroll_DB where Name = 'Ronit';
 select * from employee_payroll_DB where Startdate between CAST('2000-01-01' as Date) and GETDATE();
+-----------UC-6---------------
+select * from employee_payroll_DB;
+ALTER TABLE employee_payroll_DB add Gender char(1);
+UPDATE employee_payroll_DB set Gender = 'F' where Id = 2;
+UPDATE employee_payroll_DB set Gender ='M' where Id = 1 or Id = 3 or Id = 4;
