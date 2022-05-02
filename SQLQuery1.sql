@@ -13,3 +13,6 @@ VALUES ('Ronit',25000,'1999-01-04'),('Dibya',20000,'2002-11-06'),
 ('KD',24000,'2010-01-01'),('Abhi',20000,'2022-02-21');
 -----------UC-4---------------
 select * from employee_payroll_DB;
+-----------UC-5---------------
+select * from employee_payroll_DB where Name = 'Ronit';
+select * from employee_payroll_DB where Startdate between CAST('2000-01-01' as Date) and GETDATE();
