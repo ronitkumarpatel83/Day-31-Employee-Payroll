@@ -35,6 +35,9 @@ ALTER TABLE employee_payroll_DB Add Phone bigint;
 ALTER TABLE employee_payroll_DB Add Department varchar(200) not null default 'Information Technology';
 ALTER TABLE employee_payroll_DB Add Address varchar(200) default 'Odisha';
 ---------------UC-9-----------------------
+<<<<<<< HEAD
 select * from employee_payroll_DB;
+=======
+>>>>>>> UC-9ExtendTable
 EXEC sp_rename 'employee_payroll_DB.Salary','BasicPay','COLUMN';
 ALTER TABLE employee_payroll_DB Add Deduction float,TaxablePay float,IncomeTax float,NetPay float;
