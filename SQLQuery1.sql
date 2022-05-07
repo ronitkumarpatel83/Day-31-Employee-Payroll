@@ -65,4 +65,14 @@ create table company( company_id int primary key identity(1,1),
 company_name varchar(255),
 emp_id int FOREIGN KEY REFERENCES employee_payroll_DB(Id));
 
-select * from employee_payroll_DB;
+
+---------------UC-12----------------------
+select * from employee_payroll_DB; ----UC-4--
+select * from employee_payroll_DB where Name = 'Ronit';------UC-5--------
+select * from employee_payroll_DB where Startdate between CAST('2000-01-01' as Date) and GETDATE();------UC-5--------
+select SUM(BasicPay) as Total_Salary from employee_payroll_DB;
+select AVG(BasicPay) as Average_Salary from employee_payroll_DB;
+select MIN(BasicPay) as Minimum_Salary from employee_payroll_DB;
+select MAX(BasicPay) as Maximum_Salary from employee_payroll_DB;
+select COUNT(BasicPay) as NUmber_of_Employee from employee_payroll_DB;
+select SUM(BasicPay)as Total_Group_Of_Female from employee_payroll_DB WHERE Gender = 'F' GROUP BY gender;
