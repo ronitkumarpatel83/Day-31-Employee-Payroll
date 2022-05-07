@@ -38,6 +38,31 @@ ALTER TABLE employee_payroll_DB Add Address varchar(200) default 'Odisha';
 select * from employee_payroll_DB;
 EXEC sp_rename 'employee_payroll_DB.Salary','BasicPay','COLUMN';
 ALTER TABLE employee_payroll_DB Add Deduction float,TaxablePay float,IncomeTax float,NetPay float;
----------------UC-10---------------------
+----------------UC-10---------------------
+INSERT INTO employee_payroll_DB (Name,BasicPay,Startdate,Gender)
+VALUES ('Terissa',3000000,'2010-05-03','F');
+UPDATE employee_payroll_DB set Address = NULL where Name = 'Terissa';
+UPDATE employee_payroll_DB set Startdate = '2019-11-13' where Name = 'Terissa';
+UPDATE employee_payroll_DB set Department = 'Sales' where Name = 'Terissa';
+INSERT INTO employee_payroll_DB (Name,BasicPay,Startdate,Gender,Phone,Department,Address,Deduction,TaxablePay,IncomeTax,NetPay)
+VALUES ('Terissa',3000000,'2018-01-03','F',1234567890,'Marketing','Mumbai',1000000,2000000,500000,1500000);
+select * from employee_payroll_DB;
+select * from employee_payroll_DB where Name = 'Terissa';
 
+----------------UC-11----------------------
+create table Department( dept_id int primary key identity(1,1),
+dept_name varchar(255),
+emp_id int FOREIGN KEY REFERENCES employee_payroll_DB(Id));
 
+create table pay_roll(basic_pay float,
+deduction float,
+income_tax float,
+net_pay float,
+taxable_pay float,
+emp_id int FOREIGN KEY REFERENCES employee_payroll_DB(Id));
+
+create table company( company_id int primary key identity(1,1),
+company_name varchar(255),
+emp_id int FOREIGN KEY REFERENCES employee_payroll_DB(Id));
+
+select * from employee_payroll_DB;
